@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <title>ECG Signal</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body ng-controller="myController">
+
+     <hc-chart options="chartOptions">Placeholder for generic chart</hc-chart>
+     
+
+    <script>
+
+        //creating an application module
+        var myModule = angular.module("myModule", []);
+        angular.module('myModule', [])
+
+            // Directive for generic chart, pass in chart options
+            .directive('hcChart', function () {
+                return {
+                    restrict: 'E',
+                    template: '<div></div>',
+                    scope: {
+                        options: '='
+                    },
+                    link: function (scope, element) {
+                        Highcharts.chart(element[0], scope.options);
+                    }
+                };
+            })
+            
+            .controller('myController', function ($scope) {
+                
+                // Sample options for first chart
+                $scope.chartOptions = {
+                    title: {
+                        text: 'ECG Signal'
+                    },
+                    xAxis: {
+                        categories: ['', '', 'P', '', 'Q', 'R','S','','T','','',]
+                    },
+
+                    series: [{
+                        data: [0.0, 0.0, 5.0, 0.0, -5.0, 30.0, -8.0, 0.0, 5.0, 0.0,0.0]
+                    }]
+                };               
+            });
+    </script>
+</body>
+</html>

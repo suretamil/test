@@ -1,15 +1,20 @@
 {
-    "name": "exgreen2k15",
-    "main": "server.js",
-    "dependencies": {
-        "body-parser": "~1.4.2",
-        "bower": "1.4.1",
-        "express": "~4.5.1",
-        "jsonfile": "^4.0.0",
-        "method-override": "~2.0.2",
-        "mysql": "^2.15.0"
-    },
-    "scripts": {
-        "postinstall": "./node_modules/bower/bin/bower install"
-    }
+  "name": "ecg",
+  "version": "1.0.0",
+  "description": "ECG Monitoring System",
+  "main": "server.js",
+  "scripts": {
+    "test": "run",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ECG"
+  },
+  "keywords": [
+    "ECG",
+    "Chart"
+  ],
+  "author": "Navin tamil",
+  "license": "UNLICENSED"
 }
